@@ -19,4 +19,4 @@ jobs:
       - name: Install depenencies
         run: npm ci
       - name: Test
-        run: npm run linst
+        run: npm run lint
