@@ -2,9 +2,6 @@ name: Continus Integration
 
 on: push
 
-env: 
-  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-
 jobs:
   unit-test:
     name: Unit Test
