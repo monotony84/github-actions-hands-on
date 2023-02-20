@@ -2,7 +2,7 @@ name: Continus Integration
 on: push
 
 env:
-  cache-bersion: v1
+  cache-version: v1
 
 jobs:
   unit-test:
