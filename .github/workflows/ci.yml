@@ -1,6 +1,9 @@
 name: Continus Integration
 on: push
 
+env:
+  cache-bersion: v1
+
 jobs:
   unit-test:
     name: Unit Test
@@ -24,9 +27,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ steps.npm-cache.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{env.cache-version}}-${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{env.cache-version}}-${{ runner.os }}-node-
       - name: Install depenencies
         run: npm ci
       - name: Test
@@ -49,9 +52,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ steps.npm-cache.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{env.cache-version}}-${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{env.cache-version}}-${{ runner.os }}-node-
       - name: Install depenencies
         run: npm ci
       - name: Lint
