@@ -1,0 +1,10 @@
+name: Run Hello Action
+on: push
+
+jobs:
+  Hello:
+    runs-on: ubuntu-latest
+    name: Hello
+    steps:
+      - name: Hello
+        uses: monotony84/external-for-github-actions-hands-on@v1.0.0
